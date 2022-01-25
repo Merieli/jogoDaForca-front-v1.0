@@ -1,0 +1,9 @@
+.menu{
+    height: 7em;
+
+    &-title{
+        @include fontInsert(1.2, 800);
+        padding: .5em;
+        text-transform: uppercase;
+    }
+}

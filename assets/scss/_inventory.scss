@@ -1,0 +1,14 @@
+.inventory{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &-letter{
+        background-color: #FFDFC9;
+        @extend %flex-center;
+        @include fontInsert(1.3, 500);
+        margin: 0.2em;
+        height: 1.6em;
+        width: 1.6em;
+    }
+}

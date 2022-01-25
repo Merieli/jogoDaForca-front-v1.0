@@ -1,0 +1,49 @@
+.inventory-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.health {
+  height: 50vh;
+  width: 100vw;
+}
+
+.mission {
+  width: 100vw;
+}
+
+.inventory {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.inventory-letter {
+  background-color: #FFDFC9;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: 0.2em;
+  height: 1.6em;
+  width: 1.6em;
+}
+
+.menu {
+  height: 7em;
+}
+.menu-title {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.2em;
+  font-weight: 800;
+  padding: 0.5em;
+  text-transform: uppercase;
+}
+
+body {
+  background-color: #E9EFEE;
+  font-family: "Maven Pro", sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*# sourceMappingURL=style.css.map */
