@@ -1,0 +1,9 @@
+.quest{
+    padding: 1em;
+    width: 100%;
+    @extend %flex-center;
+
+    &-letter{
+        display: inline;
+    }
+}

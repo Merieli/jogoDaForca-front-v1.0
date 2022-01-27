@@ -2,8 +2,11 @@
     height: 7em;
 
     &-title{
-        @include fontInsert(1.2, 800);
+        display: block;
         padding: .5em;
         text-transform: uppercase;
+        width: 8.5em;
+
+        @include fontInsert(1.2, 800);
     }
 }

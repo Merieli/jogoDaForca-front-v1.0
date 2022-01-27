@@ -2,6 +2,17 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    
+    @include for-phone{
+        
+    }
+
+    @include for-tablet{
+
+    }
+
+    @include for-desktop{
+    }
 
     &-letter{
         background-color: #FFDFC9;

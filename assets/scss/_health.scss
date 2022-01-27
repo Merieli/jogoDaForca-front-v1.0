@@ -1,4 +1,18 @@
 .health{
-    height: 50vh;
-    width: 100vw;
+    
+
+    @include for-phone{
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    @include for-tablet{
+        //height: 100%;
+        //width: auto;
+    }
+
+    @include for-desktop{
+        //height: 100%;
+        //width: auto;
+    }
 }
