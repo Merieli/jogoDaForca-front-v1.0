@@ -1,7 +1,7 @@
 const questWords = [
-    "A c e s s i b i l i d a d e",
-    "R e s p o n s i v i d a d e",
-    "A d a p t a b i l i d a d e"
+    "A C E S S I B I L I D A D E",
+    "R E S P O N S I V I D A D E",
+    "A D A P T A B I L I D A D E"
 ]
 
 //função para escolher aleatoriamente a quest
@@ -12,12 +12,9 @@ const randomQuest = _ => {
     return questWords[number];
 }
 
-//palavra usada na quest
+//definindo a palavra usada na quest
 let quest = randomQuest(); 
-console.log(quest);
-
 const questLetter = quest.split(' ');
-console.log(questLetter)
 
 //Inserindo as letras na quest
 for(let item in questLetter){
@@ -25,4 +22,27 @@ for(let item in questLetter){
     questList.innerHTML += `<li data-quest="${item}" class="quest-letter"></li>`
 }
 
+//capturando cliques no inventory
+const inventory = document.querySelector('[data-inventory]');
+const listAttempts = [];
 
+inventory.addEventListener("click", function(event){
+    let divClicada = event.target
+    let letterSelected = divClicada.innerText
+
+    // adicionar letra clicada na lista de tentativas
+    listAttempts.push(letterSelected);
+    
+    // verificar se a letra existe na quest e a insere na quest
+    for(let i in questLetter){
+        if (questLetter[i] == letterSelected){
+            divClicada.classList.add("inventory-letter--hit");
+            let letter = document.querySelector(`[data-quest="${i}"]`);
+            letter.textContent = letterSelected;
+        } else{
+            divClicada.classList.add("inventory-letter--wrong")
+        }
+    }
+ 
+    //desativar botao
+})
