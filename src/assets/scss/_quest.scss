@@ -8,7 +8,10 @@
         color: $c-quest;
         display: inline;
         margin: 0.1em;
-        padding: 0.1em 0.2em;
+        padding: 0.02em 0.2em;
+        height: 29px;
+        width: 28px;
+        text-align: center;
         @include fontInsert(1.6, 700);
     }
 }

@@ -36,7 +36,10 @@
   color: #0B9BA3;
   display: inline;
   margin: 0.1em;
-  padding: 0.1em 0.2em;
+  padding: 0.02em 0.2em;
+  height: 29px;
+  width: 28px;
+  text-align: center;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.6em;
   font-weight: 700;
