@@ -2,7 +2,7 @@
 Para Desenvolver
 ```
 # Iniciar a compilação SASS
-sass --watch assets/scss/style.scss:assets/css/style.css
+sass --watch src/assets/scss/style.scss:src/assets/css/style.css
 
 
 # Trabalhar na branch development
