@@ -1,0 +1,14 @@
+.quest{
+    padding: 1em;
+    width: 100%;
+    @extend %flex-center;
+
+    &-letter{
+        border-bottom: 3px solid $c-quest;
+        color: $c-quest;
+        display: inline;
+        margin: 0.1em;
+        padding: 0.1em 0.2em;
+        @include fontInsert(1.6, 700);
+    }
+}

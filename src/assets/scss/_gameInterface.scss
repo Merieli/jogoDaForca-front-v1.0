@@ -6,6 +6,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: calc(100% - 150px);
     }
 
     @include for-tablet{
@@ -20,20 +21,20 @@
         @extend %flex-center;
 
         @include for-phone{
-            max-height: 400px;
-            width: 100%;
+            max-height: 100%;
+            max-width: 100%;
             overflow: hidden;
             position: relative;
         }
     
         @include for-tablet{
-            height: auto;
-            width: 50%;
+            max-height: 100%;
+            max-width: 50%;
         }
     
         @include for-desktop{
-            height: auto;
-            width: 45%;
+            max-height: 100%;
+            max-width: 45%;
         }
     }
 
@@ -42,18 +43,18 @@
         flex-wrap: wrap;
 
         @include for-phone{
-            height: auto;
-            width: 100%;
+            max-height: 50%;
+            max-width: 100%;
         }
     
         @include for-tablet{
-            height: auto;
-            width: 45%;
+            max-height: 100%;
+            max-width: 45%;
         }
     
         @include for-desktop{
-            height: auto;
-            width: 45%;
+            max-height: 100%;
+            max-width: 45%;
         }
     }
 }

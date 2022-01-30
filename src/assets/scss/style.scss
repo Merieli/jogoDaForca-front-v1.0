@@ -3,7 +3,7 @@
 $c-button: #FFDFC9;
 $c-button-none: #0BA36C;
 $c-button-hit: #838685;
-$c-button-error: #FA2D00;
+$c-button-wrong: #FA2D00;
 $c-background: #E9EFEE;
 $c-quest: #0B9BA3;
 
@@ -44,4 +44,5 @@ $c-quest: #0B9BA3;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }

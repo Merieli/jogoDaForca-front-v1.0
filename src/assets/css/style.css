@@ -1,4 +1,4 @@
-.gameInterface-mission, .gameInterface-health, .gameInterface, .inventory-letter, .quest {
+.gameInterface-mission, .gameInterface-health, .gameInterface, .inventory-letter, .inventory, .quest {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +10,19 @@
     max-width: 100%;
   }
 }
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .health {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .health {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
 .mission {
   width: 100vw;
 }
@@ -19,22 +32,53 @@
   width: 100%;
 }
 .quest-letter {
+  border-bottom: 3px solid #0B9BA3;
+  color: #0B9BA3;
   display: inline;
+  margin: 0.1em;
+  padding: 0.1em 0.2em;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.6em;
+  font-weight: 700;
 }
 
 .inventory {
-  display: flex;
   flex-wrap: wrap;
+  padding: 0.8em;
   width: 100%;
 }
 .inventory-letter {
   background-color: #FFDFC9;
+  border-radius: 0.5em;
+  border: 3px solid #0BA36C;
+  cursor: pointer;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.3em;
   font-weight: 500;
+  opacity: 1;
   margin: 0.2em;
   height: 1.6em;
   width: 1.6em;
+  transition: linear 0.15s;
+}
+.inventory-letter:hover {
+  box-shadow: 0px 1px 5px 0px #000000b0;
+}
+.inventory-letter--wrong {
+  border-color: #FA2D00;
+  box-shadow: inset 1px 1px 3px 1px #000000;
+  opacity: 0.5;
+}
+.inventory-letter--wrong:hover {
+  box-shadow: inset 1px 1px 3px 1px #000000;
+}
+.inventory-letter--hit {
+  border-color: #838685;
+  box-shadow: inset 1px 1px 3px 1px #000000;
+  opacity: 0.5;
+}
+.inventory-letter--hit:hover {
+  box-shadow: inset 1px 1px 3px 1px #000000;
 }
 
 .menu {
@@ -58,26 +102,27 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: calc(100% - 150px);
   }
 }
 @media (max-width: 767.98px) {
   .gameInterface-health {
-    max-height: 400px;
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
     overflow: hidden;
     position: relative;
   }
 }
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .gameInterface-health {
-    height: auto;
-    width: 50%;
+    max-height: 100%;
+    max-width: 50%;
   }
 }
 @media (min-width: 1200px) {
   .gameInterface-health {
-    height: auto;
-    width: 45%;
+    max-height: 100%;
+    max-width: 45%;
   }
 }
 .gameInterface-mission {
@@ -85,20 +130,20 @@
 }
 @media (max-width: 767.98px) {
   .gameInterface-mission {
-    height: auto;
-    width: 100%;
+    max-height: 50%;
+    max-width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .gameInterface-mission {
-    height: auto;
-    width: 45%;
+    max-height: 100%;
+    max-width: 45%;
   }
 }
 @media (min-width: 1200px) {
   .gameInterface-mission {
-    height: auto;
-    width: 45%;
+    max-height: 100%;
+    max-width: 45%;
   }
 }
 
@@ -110,6 +155,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
