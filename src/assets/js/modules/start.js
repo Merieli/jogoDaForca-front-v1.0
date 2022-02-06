@@ -1,25 +1,33 @@
-import { toHit } from "../modules/hit.js";
+import { hitPoint } from "../modules/hit.js";
+import { wrong } from "../modules/wrong.js";
+import { audioEffect } from "../modules/effect.js";
 
-export function start(questLetter, c){
-    //capturando cliques no inventory
-    const inventory = document.querySelector('[data-inventory]');
-    const listAttempts = [];
-    
-    inventory.addEventListener("click", function(event){
-        event.preventDefault();
+export function start(button, element, list, frame, listHits) {
+    const hit = [];
+    let count= 0;
 
-        let keyClicked = event.target;
-        let letterSelected = keyClicked.innerText;
+    for(let i in list){        
+        if (list[i] == element){
+            // a cada acerto adiciona o indice da quest e a letra nos arrays:
+            hit.push(i);
+            listHits.push(element);       
+        }         
+    }
 
-        // adicionar letra clicada na lista de tentativas
-        listAttempts.push(letterSelected);
+    if (hit.length > 0){
+        audioEffect("button-inventory");
+        hitPoint(button, element, hit); 
+
+        //se acertar todas as letras o jogo define a contagem como 9 para encerrar
+        if(listHits.length == list.length){
+            return count = 9;
+        } 
+
+        return count = 0;
+    } else {
+        audioEffect("wrong");
+        wrong(button, frame);        
         
-        // verificar se a letra existe na quest e a insere na quest
-        //toHit(keyClicked, letterSelected, questLetter, c);                
-        
-        //retorna a soma de count
-        toHit(keyClicked, letterSelected, questLetter, c);                
-        
-        //desativar botao
-    })
+        return count = 1;
+    }
 }
