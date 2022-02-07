@@ -6,10 +6,18 @@ $c-button-hit: #838685;
 $c-button-wrong: #FA2D00;
 $c-background: #E9EFEE;
 $c-quest: #0B9BA3;
+$c-menu-elements: #294271;
+$c-score: #F9D831;
 
 %flex-center{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+%flex-jstbetw{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 

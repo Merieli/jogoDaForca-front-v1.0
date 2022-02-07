@@ -1,5 +1,5 @@
 import { hitPoint } from "../modules/hit.js";
-import { wrong } from "../modules/wrong.js";
+import { wrong } from "./wrong.js";
 import { audioEffect } from "../modules/effect.js";
 
 export function start(button, element, list, frame, listHits) {

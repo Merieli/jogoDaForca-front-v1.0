@@ -1,5 +1,25 @@
 .menu{
-    height: 7em;
+    @extend %flex-jstbetw;
+    background-color: $c-quest;
+    border-radius: 0 0 20px 20px;
+    box-shadow: -2px 6px 11px 2px #00000033;
+    padding: 10px;
+    height: 3em;
+    width: 90%;
+
+    &-user{
+        width: 10%;
+    }
+
+    &-button{
+        background-color: $c-menu-elements;
+        border: none;
+        border-radius: 30px;
+
+        &-Svg{
+            fill: #FFDFC9;
+        }
+    }
 
     &-title{
         display: block;
@@ -8,5 +28,9 @@
         width: 8.5em;
 
         @include fontInsert(1.2, 800);
+    }
+    
+    &-scoreSvg{
+        fill: $c-score;
     }
 }

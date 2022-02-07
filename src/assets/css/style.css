@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 767.98px) {
   .health {
     max-height: 100%;
@@ -85,7 +91,23 @@
 }
 
 .menu {
-  height: 7em;
+  background-color: #0B9BA3;
+  border-radius: 0 0 20px 20px;
+  box-shadow: -2px 6px 11px 2px #00000033;
+  padding: 10px;
+  height: 3em;
+  width: 90%;
+}
+.menu-user {
+  width: 10%;
+}
+.menu-button {
+  background-color: #294271;
+  border: none;
+  border-radius: 30px;
+}
+.menu-button-Svg {
+  fill: #FFDFC9;
 }
 .menu-title {
   display: block;
@@ -95,6 +117,9 @@
   font-family: "Maven Pro", sans-serif;
   font-size: 1.2em;
   font-weight: 800;
+}
+.menu-scoreSvg {
+  fill: #F9D831;
 }
 
 .gameInterface {
