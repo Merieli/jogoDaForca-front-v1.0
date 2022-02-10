@@ -15,22 +15,66 @@
         background-color: $c-menu-elements;
         border: none;
         border-radius: 30px;
+        box-shadow: $v-shadow-menu;
+        height: 52px;
+        width: 52px;
 
         &-Svg{
-            fill: #FFDFC9;
+            fill: $c-fonticon;
         }
     }
 
     &-title{
+        @include fontInsert(1.4, 800);
+        color: $c-fonticon;
         display: block;
         padding: .5em;
         text-transform: uppercase;
+        text-shadow: 3px 3px 0px $c-menu-elements,
+            -1px -1px 0px $c-menu-elements, 
+            1px -1px 0px $c-menu-elements, 
+            -1px 1px 0px $c-menu-elements,
+            1px 1px 0px $c-menu-elements;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         width: 8.5em;
-
-        @include fontInsert(1.2, 800);
     }
-    
+
+    &-score{
+        @extend %flex-center;        
+    }
+
     &-scoreSvg{
         fill: $c-score;
+        position: relative;
+        right: -25px;
+        filter: drop-shadow(1px 3px 3px #0000006e);
+
+        &--border{
+            stroke: $c-menu-elements;
+            path{
+                stroke-width: 1.5;
+            }
+        }
     }
-}
+    
+    &-scoreBoard{
+        @include fontInsert(1.1, 800);
+        background-color: $c-score;
+        border: 4px solid $c-menu-elements;
+        box-shadow: $v-shadow-menu;
+        border-radius: 19px;
+        color: $c-fonticon;
+        padding: 0.2em 0.5em;
+        text-align: right;
+        text-shadow: 3px 3px 0px $c-menu-elements,
+            -1px -1px 0px $c-menu-elements, 
+            1px -1px 0px $c-menu-elements, 
+            -1px 1px 0px $c-menu-elements,
+            1px 1px 0px $c-menu-elements;
+        height: 18px;
+        width: 80px;
+    }
+}	
+    
