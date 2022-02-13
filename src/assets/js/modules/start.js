@@ -1,33 +1,33 @@
 import { hitPoint } from "../modules/hit.js";
-import { wrong } from "./wrong.js";
+import { wrong } from "../modules/wrong.js";
 import { audioEffect } from "../modules/effect.js";
 
 export function start(button, element, list, frame, listHits) {
     const hit = [];
-    let count= 0;
 
     for(let i in list){        
         if (list[i] == element){
-            // a cada acerto adiciona o indice da quest e a letra nos arrays:
+            // a cada acerto adiciona o indice e a letra da quest nos arrays:
             hit.push(i);
             listHits.push(element);       
         }         
     }
 
     if (hit.length > 0){
-        audioEffect("button-inventory");
         hitPoint(button, element, hit); 
 
         //se acertar todas as letras o jogo define a contagem como 9 para encerrar
         if(listHits.length == list.length){
-            return count = 9;
+            setTimeout(function(){
+                audioEffect("score-hit");
+            }, 450);
+            return { count: 9, score: 100, win: true };
         } 
-
-        return count = 0;
+        //a cada acerto e acrescido 100 a pontuacao
+        return { count: 0, score: 100, win: false } ;
     } else {
-        audioEffect("wrong");
         wrong(button, frame);        
-        
-        return count = 1;
+        //subtrai -50 da pontuação a cada erro
+        return { count: 1, score: -50, win: false };
     }
 }

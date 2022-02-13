@@ -24,13 +24,17 @@ import { start } from "./modules/start.js";
         const questList = document.querySelector('[data-quest]');
         questList.innerHTML += `<li data-quest="${item}" class="quest-letter"></li>`
     }
-    
-    //capturando cliques no inventory
-    const inventory = document.querySelector('[data-inventory]');
 
+    
+    // capturando elementos necessario
+    const inventory = document.querySelector('[data-inventory]');
+    const scoreboard = document.querySelector('[data-score]');
+    
     const hits = [];
     let attempts = 1;
-
+    let score = 0;
+    
+    //capturando cliques no inventory
     inventory.addEventListener("click", function(event){      
         let keyClicked = event.target;
         let letterSelected = keyClicked.innerText;
@@ -38,10 +42,17 @@ import { start } from "./modules/start.js";
         //Caso o numero de tentativas da contagem seja menor que 9 ira executar
         if(attempts < 9 && keyClicked != inventory){
             // verificar se a letra existe na quest e a insere na quest
-            let error = start(keyClicked, letterSelected, questLetter, attempts, hits);
+            let game = start(keyClicked, letterSelected, questLetter, attempts, hits);
+            score += game.score;
+            scoreboard.innerText = score;
+            attempts += game.count;
             
-            return attempts += error;
+            setTimeout(function(){
+                if(game.win){                    
+                    window.alert(`PARABÉNS!! Você venceu com ${score} pontos!!`);
+                }
+            }, 600);
         }
     })
-    
+ 
 })()

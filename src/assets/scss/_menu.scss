@@ -12,12 +12,14 @@
     }
 
     &-button{
+        @extend %flex-center;
         background-color: $c-menu-elements;
         border: none;
         border-radius: 30px;
         box-shadow: $v-shadow-menu;
-        height: 52px;
-        width: 52px;
+        padding: 0;
+        height: 55px;
+        width: 55px;
 
         &-Svg{
             fill: $c-fonticon;

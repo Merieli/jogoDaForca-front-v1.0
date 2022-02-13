@@ -1,4 +1,8 @@
+import { audioEffect } from "../modules/effect.js";
+
 export function wrong(button, frame){
+    audioEffect("wrong");
+
     //se errar é adicionado o estilo ao botao
     button.classList.add("inventory-letter--wrong"); 
 

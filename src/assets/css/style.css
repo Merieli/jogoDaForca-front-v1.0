@@ -1,4 +1,4 @@
-.gameInterface-mission, .gameInterface-health, .gameInterface, .menu-score, .inventory-letter, .inventory, .quest {
+.gameInterface-mission, .gameInterface-health, .gameInterface, .menu-score, .menu-button, .inventory-letter, .inventory, .quest {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,8 +106,9 @@
   border: none;
   border-radius: 30px;
   box-shadow: 1px 3px 3px 1px #0000006e;
-  height: 52px;
-  width: 52px;
+  padding: 0;
+  height: 55px;
+  width: 55px;
 }
 .menu-button-Svg {
   fill: #FFFFFF;
