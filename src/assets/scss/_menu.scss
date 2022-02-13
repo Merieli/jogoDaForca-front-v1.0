@@ -40,7 +40,12 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        text-align: center;
         width: 8.5em;
+
+        @include for-phone{
+            @include fontInsert(1.2, 800);
+        }
     }
 
     &-score{
@@ -76,7 +81,7 @@
             -1px 1px 0px $c-menu-elements,
             1px 1px 0px $c-menu-elements;
         height: 18px;
-        width: 80px;
+        width: 58px;
     }
 }	
     

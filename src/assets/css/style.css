@@ -125,7 +125,15 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
   width: 8.5em;
+}
+@media (max-width: 767.98px) {
+  .menu-title {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.2em;
+    font-weight: 800;
+  }
 }
 .menu-scoreSvg {
   fill: #F9D831;
@@ -152,7 +160,7 @@
   text-align: right;
   text-shadow: 3px 3px 0px #294271, -1px -1px 0px #294271, 1px -1px 0px #294271, -1px 1px 0px #294271, 1px 1px 0px #294271;
   height: 18px;
-  width: 80px;
+  width: 58px;
 }
 
 .gameInterface {
