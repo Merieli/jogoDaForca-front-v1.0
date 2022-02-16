@@ -10,22 +10,41 @@
   align-items: center;
 }
 
-@media (max-width: 767.98px) {
+.userInterface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
   .health {
     max-height: 100%;
     max-width: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
   .health {
+    object-fit: contain;
+    height: auto;
     max-height: 100%;
     max-width: 100%;
+    width: 100%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
   .health {
+    height: auto;
+    width: auto;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .health {
+    object-fit: contain;
+    height: auto;
     max-height: 100%;
     max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -36,6 +55,7 @@
 .quest {
   padding: 1em;
   width: 100%;
+  flex-wrap: wrap;
 }
 .quest-letter {
   border-bottom: 3px solid #0B9BA3;
@@ -50,11 +70,26 @@
   font-size: 1.6em;
   font-weight: 700;
 }
+@media (max-width: 768px) and (orientation: landscape) {
+  .quest-letter {
+    height: 20px;
+    width: 20px;
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+}
 
 .inventory {
   flex-wrap: wrap;
   padding: 0.8em;
   width: 100%;
+  max-width: 360px;
+}
+@media (max-width: 768px) and (orientation: landscape) {
+  .inventory {
+    max-width: 100%;
+  }
 }
 .inventory-letter {
   background-color: #FFDFC9;
@@ -69,6 +104,12 @@
   height: 1.6em;
   width: 1.6em;
   transition: linear 0.15s;
+}
+@media (max-width: 768px) and (orientation: landscape) {
+  .inventory-letter {
+    height: 1.3em;
+    width: 1.3em;
+  }
 }
 .inventory-letter:hover {
   box-shadow: 0px 1px 5px 0px #000000b0;
@@ -128,7 +169,7 @@
   text-align: center;
   width: 8.5em;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .menu-title {
     font-family: "Maven Pro", sans-serif;
     font-size: 1.2em;
@@ -163,56 +204,83 @@
   width: 58px;
 }
 
-.gameInterface {
-  height: 100%;
-}
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .gameInterface {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100% - 150px);
+    max-height: calc(100% - 6em);
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
+  .gameInterface {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+  .gameInterface {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .gameInterface {
+    height: calc(100% - 6em);
+    width: 100%;
+  }
+}
+@media (max-width: 768px) and (orientation: portrait) {
   .gameInterface-health {
-    max-height: 100%;
-    max-width: 100%;
+    height: auto;
+    width: auto;
     overflow: hidden;
     position: relative;
   }
 }
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
   .gameInterface-health {
-    max-height: 100%;
-    max-width: 50%;
+    height: 100%;
+    width: 28%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
   .gameInterface-health {
-    max-height: 100%;
-    max-width: 45%;
+    height: 100%;
+    width: 50%;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .gameInterface-health {
+    height: 100%;
+    width: 30%;
   }
 }
 .gameInterface-mission {
   flex-wrap: wrap;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .gameInterface-mission {
-    max-height: 50%;
-    max-width: 100%;
+    height: 70%;
+    width: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
+  .gameInterface-mission {
+    max-height: 100%;
+    max-width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
   .gameInterface-mission {
     max-height: 100%;
     max-width: 45%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) and (orientation: portrait) {
   .gameInterface-mission {
     max-height: 100%;
-    max-width: 45%;
+    width: 40%;
   }
 }
 
@@ -220,11 +288,13 @@
   background-color: #E9EFEE;
   font-family: "Maven Pro", sans-serif;
   height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 100vw;
   overflow: hidden;
+}
+
+.credits {
+  height: 1em;
+  padding: 0.1em;
 }
 
 /*# sourceMappingURL=style.css.map */

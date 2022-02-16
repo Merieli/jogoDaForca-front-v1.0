@@ -19,10 +19,24 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
     align-items: center;
 }
 
+%flex-center-colun{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 %flex-jstbetw{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+%flex-jstbetwcolun{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 /// Inserir o parametro size em "em"
@@ -34,15 +48,27 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
 
 ///Media queries para Resposividade:
 @mixin for-phone{
-    @media (max-width: 767.98px) { @content; }
+    @media (max-width: 768px) and (orientation: portrait){ @content; }
+}
+
+@mixin for-phone-landscape{
+    @media (max-width: 768px) and (orientation: landscape) { @content; }
 }
 
 @mixin for-tablet{
-    @media (min-width: 768px) and (max-width: 1199.98px) { @content; }
+    @media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait){ @content; }
+}
+
+@mixin for-tablet-landscape{
+    @media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape){ @content; }
 }
 
 @mixin for-desktop{
-    @media (min-width: 1200px) { @content; }
+    @media (min-width: 1280px) and (orientation: portrait){ @content; }
+}
+
+@mixin for-desktop-ladscape{
+    @media (min-width: 1280px) and (orientation: landscape){ @content; }
 }
 
 ///Importacoes de partes SASS:
@@ -52,9 +78,12 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
     background-color: $c-background;
     font-family: 'Maven Pro', sans-serif;
     height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    width: 100vw;
+    @extend %flex-jstbetwcolun;
     overflow: hidden;
+}
+
+.credits{
+    height: 1em;
+    padding: 0.1em;
 }

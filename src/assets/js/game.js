@@ -29,14 +29,10 @@ import { start } from "./modules/start.js";
 
     function initGame(inventory, scoreboard, questList){
         const questWords = [
-            "ACESSIBILIDADE",
-            "TESTE",
-            "RESPONSIVIDADE",
-            "FRONT",
-            "ADAPTABILIDADE",
-            "API",
-            "PROGRAMACAO",
-            "MOBILE"
+            "ACESSIBILIDADE", "TESTE",
+            "RESPONSIVIDADE", "FRONT",
+            "ADAPTABILIDADE", "API",
+            "PROGRAMACAO", "MOBILE"
         ]
     
         //função para escolher aleatoriamente a quest
