@@ -14,7 +14,7 @@
         text-align: center;
         @include fontInsert(1.6, 700);
 
-        @include for-phone-landscape{
+        @include small-landscape{
             height: 20px;
             width: 20px;
 

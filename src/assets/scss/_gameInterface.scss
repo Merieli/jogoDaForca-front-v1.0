@@ -2,52 +2,69 @@
     //height: 100%;
     @extend %flex-center;
 
-    @include for-phone{
+    @include small{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         max-height: calc(100% - 6em);       
     }
 
-    @include for-phone-landscape{
+    @include small-landscape{
         height: 100%;
         width: 100%;
     }
 
-    @include for-tablet{
+    @include medium{
         height: 100%; 
         width: 100%;
     }
 
-    @include for-desktop{
+    @include medium-landscape{
+        max-height: calc(100% - 6em); 
+    }
+
+    @include large{
         height: calc(100% - 6em); 
         width: 100%;
+    }
+
+    @include large-ladscape{
+        max-height: calc(100% - 6em);
     }
 
     &-health{
         @extend %flex-center;
 
-        @include for-phone{
+        @include small{
             height: auto;
             width: auto;
             overflow: hidden;
             position: relative;
         }
 
-        @include for-phone-landscape{
+        @include small-landscape{
             height: 100%;
             width: 28%;
         }
     
-        @include for-tablet{
+        @include medium{
+            height: 100%;
+            width: 50%;
+        }
+
+        @include medium-landscape{
             height: 100%;
             width: 50%;
         }
     
-        @include for-desktop{
+        @include large{
             height: 100%;
             width: 30%;
-            //max-width: 700px;
+        }
+
+        @include large-ladscape{
+            height: 100%;
+            width: 50%;
         }
     }
 
@@ -55,24 +72,34 @@
         @extend %flex-center;
         flex-wrap: wrap;
 
-        @include for-phone{
+        @include small{
             height: 70%;
             width: 100%;
         }
 
-        @include for-phone-landscape{
+        @include small-landscape{
             max-height: 100%;
             max-width: 70%;
         }
     
-        @include for-tablet{
+        @include medium{
             max-height: 100%;
             max-width: 45%;
         }
+
+        @include medium-landscape{
+            max-height: 100%;
+            max-width: 70%;
+        }
     
-        @include for-desktop{
+        @include large{
             max-height: 100%;
             width: 40%;
+        }
+
+        @include large-ladscape{
+            max-height: 100%;
+            max-width: 70%;
         }
     }
 }

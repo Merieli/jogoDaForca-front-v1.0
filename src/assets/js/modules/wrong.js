@@ -1,4 +1,4 @@
-import { audioEffect } from "../modules/effect.js";
+import { audioEffect } from "./effect.js";
 
 export function wrong(button, frame){
     audioEffect("wrong");

@@ -5,17 +5,6 @@
     width: 100%;
     max-width: 360px;
 
-    @include for-phone-landscape{
-        max-width: 100%;
-    }
-    
-    @include for-tablet{
-
-    }
-
-    @include for-desktop{
-    }
-
     &-letter{
         background-color: $c-button;
         border-radius: 0.5em;
@@ -29,10 +18,10 @@
         width: 1.6em;
         transition: linear 0.15s;
 
-        @include for-phone{
+        @include small{
         }
 
-        @include for-phone-landscape{
+        @include small-landscape{
             height: 1.3em;
             width: 1.3em;
         }

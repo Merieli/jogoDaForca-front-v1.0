@@ -47,27 +47,27 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
 }
 
 ///Media queries para Resposividade:
-@mixin for-phone{
+@mixin small{
     @media (max-width: 768px) and (orientation: portrait){ @content; }
 }
 
-@mixin for-phone-landscape{
+@mixin small-landscape{
     @media (max-width: 768px) and (orientation: landscape) { @content; }
 }
 
-@mixin for-tablet{
+@mixin medium{
     @media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait){ @content; }
 }
 
-@mixin for-tablet-landscape{
+@mixin medium-landscape{
     @media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape){ @content; }
 }
 
-@mixin for-desktop{
+@mixin large{
     @media (min-width: 1280px) and (orientation: portrait){ @content; }
 }
 
-@mixin for-desktop-ladscape{
+@mixin large-ladscape{
     @media (min-width: 1280px) and (orientation: landscape){ @content; }
 }
 

@@ -38,7 +38,25 @@
     width: auto;
   }
 }
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .health {
+    object-fit: contain;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
 @media (min-width: 1280px) and (orientation: portrait) {
+  .health {
+    object-fit: contain;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
   .health {
     object-fit: contain;
     height: auto;
@@ -85,11 +103,6 @@
   padding: 0.8em;
   width: 100%;
   max-width: 360px;
-}
-@media (max-width: 768px) and (orientation: landscape) {
-  .inventory {
-    max-width: 100%;
-  }
 }
 .inventory-letter {
   background-color: #FFDFC9;
@@ -151,8 +164,16 @@
   height: 55px;
   width: 55px;
 }
+@media (max-width: 768px) and (orientation: portrait) {
+  .menu-button {
+    height: 52px;
+    width: 52px;
+  }
+}
 .menu-button-Svg {
   fill: #FFFFFF;
+  height: 48px;
+  width: 48px;
 }
 .menu-title {
   font-family: "Maven Pro", sans-serif;
@@ -174,6 +195,12 @@
     font-family: "Maven Pro", sans-serif;
     font-size: 1.2em;
     font-weight: 800;
+    height: 2em;
+    width: 4.5em;
+    left: 0;
+    transform: none;
+    text-align: left;
+    position: relative;
   }
 }
 .menu-scoreSvg {
@@ -224,10 +251,20 @@
     width: 100%;
   }
 }
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .gameInterface {
+    max-height: calc(100% - 6em);
+  }
+}
 @media (min-width: 1280px) and (orientation: portrait) {
   .gameInterface {
     height: calc(100% - 6em);
     width: 100%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .gameInterface {
+    max-height: calc(100% - 6em);
   }
 }
 @media (max-width: 768px) and (orientation: portrait) {
@@ -250,10 +287,22 @@
     width: 50%;
   }
 }
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .gameInterface-health {
+    height: 100%;
+    width: 50%;
+  }
+}
 @media (min-width: 1280px) and (orientation: portrait) {
   .gameInterface-health {
     height: 100%;
     width: 30%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .gameInterface-health {
+    height: 100%;
+    width: 50%;
   }
 }
 .gameInterface-mission {
@@ -277,10 +326,22 @@
     max-width: 45%;
   }
 }
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .gameInterface-mission {
+    max-height: 100%;
+    max-width: 70%;
+  }
+}
 @media (min-width: 1280px) and (orientation: portrait) {
   .gameInterface-mission {
     max-height: 100%;
     width: 40%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .gameInterface-mission {
+    max-height: 100%;
+    max-width: 70%;
   }
 }
 
