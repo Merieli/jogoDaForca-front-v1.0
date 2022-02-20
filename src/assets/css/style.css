@@ -17,6 +17,10 @@
   flex-direction: column;
 }
 
+.health {
+  transition: opacity 1s ease-in-out;
+  filter: alpha(opacity=0);
+}
 @media (max-width: 768px) and (orientation: portrait) {
   .health {
     max-height: 100%;
@@ -76,8 +80,8 @@
   flex-wrap: wrap;
 }
 .quest-letter {
-  border-bottom: 3px solid #0B9BA3;
-  color: #0B9BA3;
+  border-bottom: 3px solid #6DB5B9;
+  color: #195559;
   display: inline;
   margin: 0.1em;
   padding: 0.02em 0.2em;
@@ -108,24 +112,25 @@
   background-color: #FFDFC9;
   border-radius: 0.5em;
   border: 3px solid #0BA36C;
+  color: #0A1D40;
   cursor: pointer;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.3em;
   font-weight: 500;
   opacity: 1;
   margin: 0.2em;
-  height: 1.6em;
-  width: 1.6em;
+  height: 1.8em;
+  width: 1.8em;
   transition: linear 0.15s;
 }
 @media (max-width: 768px) and (orientation: landscape) {
   .inventory-letter {
-    height: 1.3em;
-    width: 1.3em;
+    height: 1.6em;
+    width: 1.6em;
     margin: 0.1em;
   }
 }
-.inventory-letter:hover {
+.inventory-letter:hover, .inventory-letter:focus {
   box-shadow: 0px 1px 5px 0px #000000b0;
 }
 .inventory-letter--wrong {
@@ -133,7 +138,7 @@
   box-shadow: inset 1px 1px 3px 1px #000000;
   opacity: 0.5;
 }
-.inventory-letter--wrong:hover {
+.inventory-letter--wrong:hover, .inventory-letter--wrong:focus {
   box-shadow: inset 1px 1px 3px 1px #000000;
 }
 .inventory-letter--hit {
@@ -141,12 +146,12 @@
   box-shadow: inset 1px 1px 3px 1px #000000;
   opacity: 0.5;
 }
-.inventory-letter--hit:hover {
+.inventory-letter--hit:hover, .inventory-letter--hit:focus {
   box-shadow: inset 1px 1px 3px 1px #000000;
 }
 
 .menu {
-  background-color: #0B9BA3;
+  background-color: #6DB5B9;
   border-radius: 0 0 20px 20px;
   box-shadow: -2px 6px 11px 2px #00000033;
   padding: 10px;
@@ -157,19 +162,24 @@
   width: 10%;
 }
 .menu-button {
-  background-color: #294271;
+  background-color: #0A1D40;
   border: none;
   border-radius: 30px;
   box-shadow: 1px 3px 3px 1px #0000006e;
   padding: 0;
   height: 3.5em;
   width: 3.5em;
+  transition: linear 0.15s;
 }
 @media (max-width: 768px) and (orientation: portrait) {
   .menu-button {
     height: 2.8em;
     width: 2.8em;
   }
+}
+.menu-button:hover, .menu-button:focus {
+  box-shadow: 0px 1px 5px 5px #ffffff;
+  filter: brightness(1.2);
 }
 .menu-button-Svg {
   fill: #FFFFFF;
@@ -190,7 +200,7 @@
   display: block;
   padding: 0.5em;
   text-transform: uppercase;
-  text-shadow: 3px 3px 0px #294271, -1px -1px 0px #294271, 1px -1px 0px #294271, -1px 1px 0px #294271, 1px 1px 0px #294271;
+  text-shadow: 3px 3px 0px #0A1D40, -1px -1px 0px #0A1D40, 1px -1px 0px #0A1D40, -1px 1px 0px #0A1D40, 1px 1px 0px #0A1D40;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -238,7 +248,7 @@
   }
 }
 .menu-scoreSvg--border {
-  stroke: #294271;
+  stroke: #0A1D40;
 }
 .menu-scoreSvg--border path {
   stroke-width: 1.5;
@@ -248,13 +258,13 @@
   font-size: 1.1em;
   font-weight: 800;
   background-color: #F9D831;
-  border: 4px solid #294271;
+  border: 4px solid #0A1D40;
   box-shadow: 1px 3px 3px 1px #0000006e;
   border-radius: 19px;
   color: #FFFFFF;
   padding: 0.2em 0.5em;
   text-align: right;
-  text-shadow: 3px 3px 0px #294271, -1px -1px 0px #294271, 1px -1px 0px #294271, -1px 1px 0px #294271, 1px 1px 0px #294271;
+  text-shadow: 3px 3px 0px #0A1D40, -1px -1px 0px #0A1D40, 1px -1px 0px #0A1D40, -1px 1px 0px #0A1D40, 1px 1px 0px #0A1D40;
   height: 18px;
   width: 58px;
 }
@@ -398,9 +408,9 @@
   font-family: "Maven Pro", sans-serif;
   font-size: 1em;
   font-weight: 800;
-  color: #FFDFC9;
+  color: #0A1D40;
   border-radius: 8px;
-  background-color: #0B9BA3;
+  background-color: #6DB5B9;
   height: 1em;
   padding: 0.5em;
 }

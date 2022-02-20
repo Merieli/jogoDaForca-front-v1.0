@@ -48,9 +48,10 @@ import { start } from "./modules/start.js";
         const questLetter = quest.split('');
         
         //Inserindo as letras na quest
+        questList.ariaLabel = `Palavra do jogo com ${questLetter.length} letras`;
         for(let item in questLetter){
-            questList.innerHTML += `<li data-quest="${item}" class="quest-letter"></li>`
-        }        
+            questList.innerHTML += `<li role="region" aria-label="Letra ${item} da palavra" aria-live="polite" data-quest="${item}" class="quest-letter"></li>`
+        }    
         
         const hits = [];
         const clicked = [];

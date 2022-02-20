@@ -5,13 +5,15 @@ $c-button-none: #0BA36C;
 $c-button-hit: #838685;
 $c-button-wrong: #FA2D00;
 $c-background: #E9EFEE;
-$c-quest: #0B9BA3;
-$c-menu-elements: #294271;
+$c-fontquest: #195559;
+$c-quest: #6DB5B9;
+$c-menu-elements: #0A1D40;
 $c-score: #F9D831;
 $c-fonticon: #FFFFFF;
 
 /// Values
 $v-shadow-menu: 1px 3px 3px 1px #0000006e;
+$v-shadow-button: inset 1px 1px 3px 1px #000000;
 
 %flex-center{
     display: flex;
@@ -96,7 +98,7 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
 
     &-title{
         @include fontInsert(1, 800);
-        color: $c-button;
+        color: $c-menu-elements;
         border-radius: 8px;
         background-color: $c-quest;
         height: 1em;
