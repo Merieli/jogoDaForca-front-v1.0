@@ -53,6 +53,7 @@ import { start } from "./modules/start.js";
         }        
         
         const hits = [];
+        const clicked = [];
         let attempts = 1;
         let score = 0;
         setTimeout(function(){
@@ -60,13 +61,21 @@ import { start } from "./modules/start.js";
             inventory.addEventListener("click", function(event){      
                 let keyClicked = event.target;
                 let letterSelected = keyClicked.innerText;
+
+                //Verificando se o elemento "existe na lista de clicados" ja foi clicado antes
+                const wasClicked = clicked.includes(keyClicked);
                 
-                //Caso o numero de tentativas da contagem seja menor que 9 ira executar
-                if(attempts < 9 && keyClicked != inventory){
+                //Caso o numero de tentativas da contagem seja menor que 9 e a letra ja nao tenha sido clicada ira executar
+                if(attempts < 9 && keyClicked != inventory && wasClicked == false ){
+                    //adicionado letra a lista de clicados:
+                    clicked.push(keyClicked);
                     // verificar se a letra existe na quest e a insere na quest
                     let game = start(keyClicked, letterSelected, questLetter, attempts, hits);
+                    //somar a pontuacao
                     score += game.score;
+                    // inserir a pontuação no placar
                     scoreboard.innerText = score;
+                    //somar as tentativas erradas
                     attempts += game.count;
                     
                     setTimeout(function(){

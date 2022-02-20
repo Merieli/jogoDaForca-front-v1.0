@@ -4,7 +4,7 @@ import { audioEffect } from "../modules/effect.js";
 
 export function start(button, element, list, attempt, listHits) {
     const hit = [];
-
+    // loop para percorrer todas letras da quest:
     for(let i in list){        
         if (list[i] == element){
             // a cada acerto adiciona o indice e a letra da quest nos arrays:
@@ -14,7 +14,7 @@ export function start(button, element, list, attempt, listHits) {
     }
 
     const quantityHits = hit.length;
-
+    // se a nessa execução houver uma quantidade de acertos maior que 0 executa a função de acerto:
     if (quantityHits > 0){
         hitPoint(button, element, hit); 
 
