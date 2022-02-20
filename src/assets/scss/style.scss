@@ -47,6 +47,14 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
 }
 
 ///Media queries para Resposividade:
+@mixin small-p{
+    @media (max-width: 480px) and (orientation: portrait){ @content; }
+}
+
+@mixin  small-g {
+    @media (min-width: 480px) and (max-width: 768px) and (orientation: portrait){ @content; }
+}
+
 @mixin small{
     @media (max-width: 768px) and (orientation: portrait){ @content; }
 }
@@ -83,7 +91,15 @@ $v-shadow-menu: 1px 3px 3px 1px #0000006e;
     overflow: hidden;
 }
 
-.credits{
-    height: 1em;
-    padding: 0.1em;
+.credits{    
+    min-height: 2.5em;
+
+    &-title{
+        @include fontInsert(1, 800);
+        color: $c-button;
+        border-radius: 8px;
+        background-color: $c-quest;
+        height: 1em;
+        padding: 0.5em;
+    }
 }

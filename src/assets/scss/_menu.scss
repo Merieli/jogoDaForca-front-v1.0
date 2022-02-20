@@ -18,18 +18,23 @@
         border-radius: 30px;
         box-shadow: $v-shadow-menu;
         padding: 0;
-        height: 55px;
-        width: 55px;
+        height: 3.5em;
+        width: 3.5em;
 
         @include small{
-            height: 52px;
-            width: 52px;
+            height: 2.8em;
+            width: 2.8em;
         }
 
         &-Svg{
             fill: $c-fonticon;
-            height: 48px;
-            width: 48px;
+            height: 3em;
+            width: 3em;
+
+            @include small{
+                height: 2.625em;
+                width: 2.625em;
+            }
         }
     }
 
@@ -50,14 +55,24 @@
         text-align: center;
         width: 8.5em;
 
-        @include small{
+        @include small-p{
             @include fontInsert(1.2, 800);
             height: 2em;
-            width: 4.5em;
+            width: 4.7em;
             left: 0;
+            position: relative;
             transform: none;
             text-align: left;
-            position: relative;
+        }
+
+        @include small-g{
+            @include fontInsert(1.2, 800);
+            height: 2em;
+            width: 4.7em;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            text-align: center;    
         }
     }
 
@@ -70,6 +85,13 @@
         position: relative;
         right: -25px;
         filter: drop-shadow(1px 3px 3px #0000006e);
+        height: 3.625em;
+        width: 3.625em;
+
+        @include small{
+            height: 3em;
+            width: 3em;
+        }
 
         &--border{
             stroke: $c-menu-elements;
@@ -95,6 +117,11 @@
             1px 1px 0px $c-menu-elements;
         height: 18px;
         width: 58px;
+
+        @include small{
+            @include fontInsert(1, 800);
+            padding: 0.15em 0.35em;
+        }
     }
 }	
     

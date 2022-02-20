@@ -18,12 +18,10 @@
         width: 1.6em;
         transition: linear 0.15s;
 
-        @include small{
-        }
-
         @include small-landscape{
             height: 1.3em;
             width: 1.3em;
+            margin: 0.1em;
         }
 
         &:hover{
