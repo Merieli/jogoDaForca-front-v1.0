@@ -1,4 +1,4 @@
-.gameInterface-mission, .gameInterface-health, .gameInterface, .menu-score, .menu-button, .inventory-letter, .inventory, .quest {
+.text-game, .gameInterface-mission, .gameInterface-health, .gameInterface, .menu-score, .menu-button, .inventory-letter, .inventory, .quest {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -413,6 +413,13 @@
   background-color: #6DB5B9;
   height: 1em;
   padding: 0.5em;
+}
+
+.text-game {
+  font-weight: 700;
+}
+.text-game .menu-button-Svg {
+  fill: #0A1D40;
 }
 
 /*# sourceMappingURL=style.css.map */

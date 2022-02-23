@@ -105,3 +105,12 @@ $v-shadow-button: inset 1px 1px 3px 1px #000000;
         padding: 0.5em;
     }
 }
+
+.text-game{
+    @extend %flex-center;
+    font-weight: 700;
+
+    .menu-button-Svg{
+        fill: $c-menu-elements;
+    }
+}
