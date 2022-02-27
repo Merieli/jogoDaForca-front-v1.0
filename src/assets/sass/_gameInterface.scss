@@ -1,0 +1,106 @@
+.gameInterface{
+    @extend %flex-center;
+
+    @include small{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-height: calc(100% - 6em);       
+    }
+
+    @include small-landscape{
+        height: 100%;
+        width: 100%;
+    }
+
+    @include medium{
+        height: 100%; 
+        width: 100%;
+    }
+
+    @include medium-landscape{
+        max-height: calc(100% - 7em);
+        padding: 0 2em;
+    }
+
+    @include large{
+        height: calc(100% - 7em); 
+        width: 100%;
+    }
+
+    @include large-ladscape{
+        max-height: calc(100% - 7em);
+    }
+
+    &-health{
+        @extend %flex-center;
+
+        @include small{
+            height: auto;
+            width: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @include small-landscape{
+            height: 100%;
+            width: 28%;
+        }
+    
+        @include medium{
+            height: 100%;
+            width: 50%;
+        }
+
+        @include medium-landscape{
+            height: 100%;
+            width: 50%;
+        }
+    
+        @include large{
+            height: 100%;
+            width: 30%;
+        }
+
+        @include large-ladscape{
+            height: 100%;
+            max-width: 50%;
+            width: auto
+        }
+    }
+
+    &-mission{
+        @extend %flex-center;
+        flex-wrap: wrap;
+
+        @include small{
+            height: 70%;
+            width: 100%;
+        }
+
+        @include small-landscape{
+            max-height: 100%;
+            max-width: 70%;
+        }
+    
+        @include medium{
+            max-height: 100%;
+            max-width: 45%;
+        }
+
+        @include medium-landscape{
+            max-height: 100%;
+            max-width: 70%;
+        }
+    
+        @include large{
+            max-height: 100%;
+            width: 40%;
+        }
+
+        @include large-ladscape{
+            max-height: 100%;
+            max-width: 70%;
+        }
+    }
+}

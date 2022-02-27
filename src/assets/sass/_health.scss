@@ -1,0 +1,46 @@
+.health{
+    transition: opacity 1s ease-in-out;
+    filter: alpha(opacity=0);
+    
+    @include small{
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    @include small-landscape{
+        object-fit: contain;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @include medium{
+        height: auto;
+        width: auto;
+    }
+
+    @include medium-landscape{
+        object-fit: contain;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @include large{
+        object-fit: contain;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @include large-ladscape{
+        object-fit: contain;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+}

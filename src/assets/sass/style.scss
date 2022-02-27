@@ -1,0 +1,116 @@
+
+/// Colors of the game
+$c-button: #FFDFC9;
+$c-button-none: #0BA36C;
+$c-button-hit: #838685;
+$c-button-wrong: #FA2D00;
+$c-background: #E9EFEE;
+$c-fontquest: #195559;
+$c-quest: #6DB5B9;
+$c-menu-elements: #0A1D40;
+$c-score: #F9D831;
+$c-fonticon: #FFFFFF;
+
+/// Values
+$v-shadow-menu: 1px 3px 3px 1px #0000006e;
+$v-shadow-button: inset 1px 1px 3px 1px #000000;
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-center-colun{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+%flex-jstbetw{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%flex-jstbetwcolun{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/// Inserir o parametro size em "em"
+@mixin fontInsert($size, $weight){
+    font-family: 'Maven Pro', sans-serif;
+    font-size: $size * 1em;
+    font-weight: $weight;
+}
+
+///Media queries para Resposividade:
+@mixin small-p{
+    @media (max-width: 480px) and (orientation: portrait){ @content; }
+}
+
+@mixin  small-g {
+    @media (min-width: 480px) and (max-width: 768px) and (orientation: portrait){ @content; }
+}
+
+@mixin small{
+    @media (max-width: 768px) and (orientation: portrait){ @content; }
+}
+
+@mixin small-landscape{
+    @media (max-width: 768px) and (orientation: landscape) { @content; }
+}
+
+@mixin medium{
+    @media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait){ @content; }
+}
+
+@mixin medium-landscape{
+    @media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape){ @content; }
+}
+
+@mixin large{
+    @media (min-width: 1280px) and (orientation: portrait){ @content; }
+}
+
+@mixin large-ladscape{
+    @media (min-width: 1280px) and (orientation: landscape){ @content; }
+}
+
+///Importacoes de partes SASS:
+@import 'health', 'mission', 'quest', 'inventory', 'menu', 'gameInterface';
+
+.userInterface{
+    background-color: $c-background;
+    font-family: 'Maven Pro', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    @extend %flex-jstbetwcolun;
+    overflow: hidden;
+}
+
+.credits{    
+    min-height: 2.5em;
+
+    &-title{
+        @include fontInsert(1, 800);
+        color: $c-menu-elements;
+        border-radius: 8px;
+        background-color: $c-quest;
+        height: 1em;
+        padding: 0.5em;
+    }
+}
+
+.text-game{
+    @extend %flex-center;
+    font-weight: 700;
+
+    .menu-button-Svg{
+        fill: $c-menu-elements;
+    }
+}

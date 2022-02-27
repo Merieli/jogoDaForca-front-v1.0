@@ -1,25 +1,72 @@
-.gameInterface-mission, .gameInterface-health, .gameInterface, .inventory-letter, .inventory, .quest {
+.text-game, .gameInterface-mission, .gameInterface-health, .gameInterface, .menu-score, .menu-button, .inventory-letter, .inventory, .quest {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@media (max-width: 767.98px) {
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInterface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.health {
+  transition: opacity 1s ease-in-out;
+  filter: alpha(opacity=0);
+}
+@media (max-width: 768px) and (orientation: portrait) {
   .health {
     max-height: 100%;
     max-width: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
   .health {
+    object-fit: contain;
+    height: auto;
     max-height: 100%;
     max-width: 100%;
+    width: 100%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
   .health {
+    height: auto;
+    width: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .health {
+    object-fit: contain;
+    height: auto;
     max-height: 100%;
     max-width: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .health {
+    object-fit: contain;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .health {
+    object-fit: contain;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -30,10 +77,11 @@
 .quest {
   padding: 1em;
   width: 100%;
+  flex-wrap: wrap;
 }
 .quest-letter {
-  border-bottom: 3px solid #0B9BA3;
-  color: #0B9BA3;
+  border-bottom: 3px solid #6DB5B9;
+  color: #195559;
   display: inline;
   margin: 0.1em;
   padding: 0.02em 0.2em;
@@ -44,27 +92,45 @@
   font-size: 1.6em;
   font-weight: 700;
 }
+@media (max-width: 768px) and (orientation: landscape) {
+  .quest-letter {
+    height: 20px;
+    width: 20px;
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+}
 
 .inventory {
   flex-wrap: wrap;
   padding: 0.8em;
   width: 100%;
+  max-width: 360px;
 }
 .inventory-letter {
   background-color: #FFDFC9;
   border-radius: 0.5em;
   border: 3px solid #0BA36C;
+  color: #0A1D40;
   cursor: pointer;
   font-family: "Maven Pro", sans-serif;
   font-size: 1.3em;
   font-weight: 500;
   opacity: 1;
   margin: 0.2em;
-  height: 1.6em;
-  width: 1.6em;
+  height: 1.8em;
+  width: 1.8em;
   transition: linear 0.15s;
 }
-.inventory-letter:hover {
+@media (max-width: 768px) and (orientation: landscape) {
+  .inventory-letter {
+    height: 1.6em;
+    width: 1.6em;
+    margin: 0.1em;
+  }
+}
+.inventory-letter:hover, .inventory-letter:focus {
   box-shadow: 0px 1px 5px 0px #000000b0;
 }
 .inventory-letter--wrong {
@@ -72,7 +138,7 @@
   box-shadow: inset 1px 1px 3px 1px #000000;
   opacity: 0.5;
 }
-.inventory-letter--wrong:hover {
+.inventory-letter--wrong:hover, .inventory-letter--wrong:focus {
   box-shadow: inset 1px 1px 3px 1px #000000;
 }
 .inventory-letter--hit {
@@ -80,73 +146,250 @@
   box-shadow: inset 1px 1px 3px 1px #000000;
   opacity: 0.5;
 }
-.inventory-letter--hit:hover {
+.inventory-letter--hit:hover, .inventory-letter--hit:focus {
   box-shadow: inset 1px 1px 3px 1px #000000;
 }
 
 .menu {
-  height: 7em;
+  background-color: #6DB5B9;
+  border-radius: 0 0 20px 20px;
+  box-shadow: -2px 6px 11px 2px #00000033;
+  padding: 10px;
+  height: 3em;
+  width: 90%;
+}
+.menu-user {
+  width: 10%;
+}
+.menu-button {
+  background-color: #0A1D40;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 1px 3px 3px 1px #0000006e;
+  padding: 0;
+  height: 3.5em;
+  width: 3.5em;
+  transition: linear 0.15s;
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .menu-button {
+    height: 2.8em;
+    width: 2.8em;
+  }
+}
+.menu-button:hover, .menu-button:focus {
+  box-shadow: 0px 1px 5px 5px #ffffff;
+  filter: brightness(1.2);
+}
+.menu-button-Svg {
+  fill: #FFFFFF;
+  height: 3em;
+  width: 3em;
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .menu-button-Svg {
+    height: 2.625em;
+    width: 2.625em;
+  }
 }
 .menu-title {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1.4em;
+  font-weight: 800;
+  color: #FFFFFF;
   display: block;
   padding: 0.5em;
   text-transform: uppercase;
+  text-shadow: 3px 3px 0px #0A1D40, -1px -1px 0px #0A1D40, 1px -1px 0px #0A1D40, -1px 1px 0px #0A1D40, 1px 1px 0px #0A1D40;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
   width: 8.5em;
+}
+@media (max-width: 480px) and (orientation: portrait) {
+  .menu-title {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.2em;
+    font-weight: 800;
+    height: 2em;
+    width: 4.7em;
+    left: 0;
+    position: relative;
+    transform: none;
+    text-align: left;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (orientation: portrait) {
+  .menu-title {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.2em;
+    font-weight: 800;
+    height: 2em;
+    width: 4.7em;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+.menu-scoreSvg {
+  fill: #F9D831;
+  position: relative;
+  right: -25px;
+  filter: drop-shadow(1px 3px 3px #0000006e);
+  height: 3.625em;
+  width: 3.625em;
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .menu-scoreSvg {
+    height: 3em;
+    width: 3em;
+  }
+}
+.menu-scoreSvg--border {
+  stroke: #0A1D40;
+}
+.menu-scoreSvg--border path {
+  stroke-width: 1.5;
+}
+.menu-scoreBoard {
   font-family: "Maven Pro", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 800;
+  background-color: #F9D831;
+  border: 4px solid #0A1D40;
+  box-shadow: 1px 3px 3px 1px #0000006e;
+  border-radius: 19px;
+  color: #FFFFFF;
+  padding: 0.2em 0.5em;
+  text-align: right;
+  text-shadow: 3px 3px 0px #0A1D40, -1px -1px 0px #0A1D40, 1px -1px 0px #0A1D40, -1px 1px 0px #0A1D40, 1px 1px 0px #0A1D40;
+  height: 18px;
+  width: 58px;
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .menu-scoreBoard {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0.15em 0.35em;
+  }
 }
 
-.gameInterface {
-  height: 100%;
-}
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .gameInterface {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100% - 150px);
+    max-height: calc(100% - 6em);
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
+  .gameInterface {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+  .gameInterface {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .gameInterface {
+    max-height: calc(100% - 7em);
+    padding: 0 2em;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .gameInterface {
+    height: calc(100% - 7em);
+    width: 100%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .gameInterface {
+    max-height: calc(100% - 7em);
+  }
+}
+@media (max-width: 768px) and (orientation: portrait) {
   .gameInterface-health {
-    max-height: 100%;
-    max-width: 100%;
+    height: auto;
+    width: auto;
     overflow: hidden;
     position: relative;
   }
 }
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
   .gameInterface-health {
-    max-height: 100%;
-    max-width: 50%;
+    height: 100%;
+    width: 28%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
   .gameInterface-health {
-    max-height: 100%;
-    max-width: 45%;
+    height: 100%;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
+  .gameInterface-health {
+    height: 100%;
+    width: 50%;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .gameInterface-health {
+    height: 100%;
+    width: 30%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .gameInterface-health {
+    height: 100%;
+    max-width: 50%;
+    width: auto;
   }
 }
 .gameInterface-mission {
   flex-wrap: wrap;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 768px) and (orientation: portrait) {
   .gameInterface-mission {
-    max-height: 50%;
-    max-width: 100%;
+    height: 70%;
+    width: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (max-width: 768px) and (orientation: landscape) {
+  .gameInterface-mission {
+    max-height: 100%;
+    max-width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
   .gameInterface-mission {
     max-height: 100%;
     max-width: 45%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: landscape) {
   .gameInterface-mission {
     max-height: 100%;
-    max-width: 45%;
+    max-width: 70%;
+  }
+}
+@media (min-width: 1280px) and (orientation: portrait) {
+  .gameInterface-mission {
+    max-height: 100%;
+    width: 40%;
+  }
+}
+@media (min-width: 1280px) and (orientation: landscape) {
+  .gameInterface-mission {
+    max-height: 100%;
+    max-width: 70%;
   }
 }
 
@@ -154,11 +397,29 @@
   background-color: #E9EFEE;
   font-family: "Maven Pro", sans-serif;
   height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 100vw;
   overflow: hidden;
+}
+
+.credits {
+  min-height: 2.5em;
+}
+.credits-title {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  color: #0A1D40;
+  border-radius: 8px;
+  background-color: #6DB5B9;
+  height: 1em;
+  padding: 0.5em;
+}
+
+.text-game {
+  font-weight: 700;
+}
+.text-game .menu-button-Svg {
+  fill: #0A1D40;
 }
 
 /*# sourceMappingURL=style.css.map */
