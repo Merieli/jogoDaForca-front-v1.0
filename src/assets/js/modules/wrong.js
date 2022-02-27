@@ -8,7 +8,7 @@ export function wrong(button, frame){
     button.classList.add("inventory-letter--wrong"); 
 
     //troca da imagem do Stickyman
-    frame = frame + 1;
+    frame ++;
     image.src = `assets/img/Frame${frame}.png`;
     image.alt = `Forca com o Stickman com ${(9 - frame)} de vida`;
 }

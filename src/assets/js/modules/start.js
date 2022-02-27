@@ -14,7 +14,7 @@ export function start(button, element, list, attempt, listHits) {
     }
 
     const quantityHits = hit.length;
-    // se a nessa execução houver uma quantidade de acertos maior que 0 executa a função de acerto:
+    // se nessa execução houver uma quantidade de acertos maior que 0 executa a função de acerto:
     if (quantityHits > 0){
         hitPoint(button, element, hit); 
 
