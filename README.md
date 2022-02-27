@@ -15,7 +15,8 @@
 </p>
 
 <div align="center">
-  <img src="[GIF DE DEMONSTRAÇÃO OU IMAGEM do projeto]" alt="demo-web" height="425">
+  <img src="src/assets/img/settings/desktop-win-lose.gif" alt="Demonstração da execução do jogo da forca no desktop" height="425">
+  <img src="src/assets/img/settings/mobile-lose.gif" alt="Demonstração da execução do jogo da forca no mobile" height="425">
 </div>
 
 <hr/>
@@ -27,9 +28,11 @@
 
 <details>
 <summary><strong>📑 Concepts used</strong></summary>
-- Mobile-first
-- Responsividade
-- Acessibilidade
+
+  - Mobile-first
+  - Responsividade
+  - Acessibilidade
+
 </details>
 
 ## ℹ️ How To Use
