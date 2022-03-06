@@ -6,7 +6,7 @@
     Jogo da Forca
 </h1>
 
-<p align="center">This is a Hangman game developed to study javascript and sass together with the concepts of mobile first and accessibility.</p>
+<p align="center">This is a Hangman game developed to study javascript and sass together with the concepts of mobile first and accessibility, finished in February 27, 2022.</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
